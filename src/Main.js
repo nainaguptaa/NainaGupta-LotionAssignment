@@ -31,7 +31,7 @@ const Main = ({
     onUpdateNote(updatedNote);
   };
 
-  const [value, setValue] = useState("");
+  
 
   if (!activeNote)
     return (
