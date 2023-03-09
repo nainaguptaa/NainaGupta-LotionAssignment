@@ -21,7 +21,7 @@ const Sidebar = ({
     )
   }
 
-  if (notes.length == 0) {
+  if (notes.length === 0) {
     return (
       <div className="app-sidebar">
         <div className="app-sidebar-header">
