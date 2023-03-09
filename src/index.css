@@ -1,4 +1,4 @@
-body,
+/* body,
 h1,
 h2,
 h3,
@@ -13,4 +13,403 @@ p {
 a {
   color: inherit;
   text-decoration: none;
+} */
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+body,
+.App {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  /* height: 100vh; */
+  margin: 0;
+  overflow: hidden;
+  font-size: 16px;
+  /* display: flex; */
+  /* flex-direction: row; */
+  background: url(https://www.toptal.com/designers/subtlepatterns/patterns/lightpaperfibers.png);
+}
+
+
+
+button {
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
+  font-family: inherit;
+  cursor: pointer;
+  color: rgb(8, 8, 8);
+  position: relative;
+}
+
+/* button:hover {
+  color: white;
+  background-color: rgb(84, 51, 134);
+  width: 20%;
+  height: 50%;
+  
+
+}  */
+
+.App {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+
+}
+
+
+
+#app-sidebar {
+  width: 100%;
+  height: 87.6%;
+  border-right: 1px solid #ddd;
+  /* position: absolute; */
+  bottom: 0;
+
+}
+
+.app-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  border-right: 1px solid grey;
+}
+.app-sidebar-header h1 {
+  margin: 0;
+  font-size: 25px;
+  padding-top: 10px;
+  padding-right: 200px;
+}
+
+.app-sidebar-header button{
+position: relative;
+}
+
+
+
+.app-sidebar-header button:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.8;
+  z-index: -1;
+  transform: scaleX(-2);
+  color: white;
+}
+
+
+
+
+.app-sidebar-header button:hover {
+  color: white;
+  background-color: #423a52;
+}
+
+
+#noNotes {
+  text-align: center;
+  border-top: 1px solid grey;
+  padding-top: 20px;
+  border-right: 1px solid grey;
+  height: 100vh;
+  font-size: 25px;
+  color: grey;
+}
+
+
+
+.app-sidebar-notes {
+  height: calc(100vh - 78px);
+  overflow-y: scroll;
+  border-top: solid rgb(154, 149, 149) 1px;
+}
+
+.app-sidebar-note {
+  padding: 25px;
+  cursor: pointer;
+}
+.sidebar-note-title {
+  display: flex;
+  justify-content: space-between;
+}
+.app-sidebar-note button {
+  color: crimson;
+}
+.app-sidebar-note p {
+  margin: 10px 0;
+}
+.app-sidebar-note small {
+  display: block;
+  color: #999;
+}
+
+.app-sidebar-note:hover {
+  background: #ddd;
+}
+.app-sidebar-note.active,
+.app-sidebar-note.active small {
+  background-color: #423a52;
+  color: white;
+}
+
+
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 75%;
+
+}
+
+.app-main-heading{
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+.main-notes-title{
+  display: flex;
+  border-bottom: 1px solid rgb(186, 184, 184);
+  flex-direction: column;
+  position: absolute;
+  height: 100px;
+  width: 80%;
+  right: 0;
+  margin-left: 478px;
+}
+
+#title{
+  margin-bottom: 1650px;
+  border: none;
+  outline: none;
+  font-size: 25px;
+}
+
+#editor{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+/**/
+.new_editor{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  width: 100%;
+ height: 70px;
+ font-size: 17px;
+ border: none;
+ outline: none;
+ text-align: left; 
+}
+/**/
+
+#editor ::placeholder{
+  font-weight: lighter;
+  color: #999;
+
+}
+
+.title-edit{
+ width: 80%;
+ height: 40px;
+ font-size: 30px;
+ border: none;
+ outline: none;
+}
+
+
+#date-updated {
+  white-space: nowrap;
+  padding-right: 20px;
+  padding-top: 7px;
+
+}
+
+
+
+.main-notes-button{
+  right: 0;
+  padding-top: 7px;
+  padding-right: 90px;
+  align-items: center;
+  display: flex;
+  gap: 90px;
+}
+
+.main-notes-button button {
+  font-size: 17px;
+  position: relative;
+}
+
+.main-notes-button button:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #423a52;
+  opacity: 0.8;
+  z-index: -1;
+  transform: scale(2.4);
+}
+
+.main-notes-button button:hover {
+  color: white;
+  z-index: 1;
+}
+
+
+.main-notes-button button:hover span {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+.main-notes-title{
+  text-align: left;
+}
+
+
+
+.app-main-note-edit{
+  height: 100vh;
+} 
+
+.no-active-note {
+  width: 50%;
+  height: 90%;
+  line-height: 100vh;
+  text-align: right;
+  margin-left: 160px;
+  margin-bottom: 60px;
+  font-size: 2rem;
+  color: #999;
+  position: absolute;
+  bottom: 0;
+}
+
+#toggle button{
+  position: absolute;
+  left: 0;
+  padding-left: 20px; 
+  padding-top: 20px;
+}
+
+.toggle button:hover {
+  color: rgb(50, 86, 204); /* Change the background color on hover */
+}
+
+
+/* .app-main-note-edit {
+  padding: 25px;
+} */
+
+.main-notes-content, input
+textarea {
+  display: block;
+  margin-top: 83px;
+  margin-left: 70px;
+  bottom: 0;
+  padding-left:40 px;
+  transform: scale(1.1);
+  font-size: inherit;
+  font-family: inherit;
+  margin-left: 514px;
+
+}
+
+
+
+
+.app-main-note-edit input {
+  height: 50px;
+  font-size: 2rem;
+}
+
+.main-notes-title{
+  left: 0;
+
+}
+
+
+
+.no-note-yet{
+  display: flex;
+
+
+}
+
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: 1px solid rgb(117, 112, 112);
+  height: 105px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+.Header h1{
+  font-size: 2 rem;
+  margin: 0;
+}
+
+.Header h2{
+  font-size: 15px;
+  margin: 0;
+  color: #777;
+}
+
+.titles{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+
+}
+
+.content-side{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  right: 0;
+  width: 100%;
+  top: 100px;
+}
+
+.hidden{
+  display: none;
+}
+
+.quill{
+  height: 100%;
 }
